@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    width: 100%;
+    background-color: rgb(30, 30, 30);
+}
+.nav-link{
+    color: white;
+    font-size: 1.2rem;
+}
+.nav-link:hover{
+    color: #55ff00;
+}
+.navbar-brand{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    animation: golwred 0.50s ease-in-out infinite alternate-reverse;
+}
+.navbar-brand:hover{
+    color: white;
+    animation: golwgreen 0.50s ease-in-out infinite alternate-reverse;
+}
+.bg{
+    background: linear-gradient(to bottom, #cccccc, #292929);
+    height:100vh;
+
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+}
+.wrapper{
+    max-width: 1300px;
+    position: relative;
+    margin-top: -15rem;
+}
+.wrapper i{
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    position: absolute;
+    text-align: center;
+    line-height: 40px;
+    border-radius:50% ;
+    background-color: wheat;
+    transform: translateY(-50%);
+}
+.wrapper i:first-child{
+    left: -23px;
+    z-index: 1;
+    display: none;
+}
+.wrapper i:last-child{
+    right: -23px;
+}
+.wrapper .carousel{
+    white-space: nowrap;
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+}
+.carousel.dragging img{
+    pointer-events: none;
+}
+.carousel img{
+    height: 300px;
+    margin-left: 10px;
+    /* width: 200px; */
+    object-fit: cover;
+    width: calc(100% / 4);
+}
+.carousel img:first-child{
+    margin-left: 0px;
+}
+
+@keyframes golwred{
+    100%{
+        text-shadow:
+        0 0 1px #ffffff,
+        0 0 4px #f6ff00,
+        0 0 11px #f6ff00,
+        0 0 19px #f6ff00,
+        0 0 40px #f6ff00;
+    }
+    0%{
+        text-shadow:
+        0 0 1px #ffffff,
+        0 0 4px #f6ff00,
+        0 0 10px #f6ff00,
+        0 0 18px #f6ff00,
+        0 0 38px #f6ff00;
+    }  
+}
+@keyframes golwgreen{
+    100%{
+        text-shadow:
+        0 0 1px #ffffff,
+        0 0 4px #55ff00,
+        0 0 11px #55ff00,
+        0 0 19px #55ff00,
+        0 0 40px #55ff00;
+    }
+    0%{
+        text-shadow:
+        0 0 1px #ffffff,
+        0 0 4px #55ff00,
+        0 0 10px #55ff00,
+        0 0 18px #55ff00,
+        0 0 38px #55ff00;
+    }  
+}
+/* media query */
+@media screen and (max-width: 900px){
+    .carousel img{
+        width: calc(100%/3);
+    } 
+}
+@media screen and (max-width: 500px){
+    .carousel img{
+        width: 100%;
+    } 
+}
